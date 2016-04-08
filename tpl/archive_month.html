@@ -1,0 +1,65 @@
+{{tpl:extends parent="__layout.html"}}
+
+<tpl:Block name="head-title">
+	<title>{{tpl:lang Archives}} - {{tpl:ArchiveDate}} - {{tpl:BlogName encode_html="1"}}</title>
+</tpl:Block>
+
+<tpl:Block name="meta-robots">
+	<meta name="ROBOTS" content="{{tpl:BlogMetaRobots robots="NOINDEX"}}" />
+</tpl:Block>
+
+<tpl:Block name="dc-entry">
+	<meta property="dc.title" lang="{{tpl:BlogLanguage}}" content="{{tpl:lang Archives}} - {{tpl:ArchiveDate}} - {{tpl:BlogName encode_html="1"}}" />
+	<meta property="dc.language" content="{{tpl:BlogLanguage}}" />
+	<meta property="dc.date" content="{{tpl:BlogUpdateDate iso8601="1"}}" />
+</tpl:Block>
+
+<tpl:Block name="head-linkrel">
+	<link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
+	<link rel="up" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+	<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+
+	<tpl:ArchiveNext><link rel="next" href="{{tpl:ArchiveURL}}"
+	title="{{tpl:ArchiveDate encode_html="1"}}" /></tpl:ArchiveNext>
+	<tpl:ArchivePrevious><link rel="prev" href="{{tpl:ArchiveURL}}"
+	title="{{tpl:ArchiveDate encode_html="1"}}" /></tpl:ArchivePrevious>
+
+	<tpl:Entries no_content="1">
+		<link rel="chapter" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" />
+	</tpl:Entries>
+</tpl:Block>
+
+<tpl:Block name="body-tag"><body class="dc-archive-month"></tpl:Block>
+
+<tpl:Block name="main-content">
+  <div class="post">
+  <div id="content-info">
+    <h2>{{tpl:ArchiveDate}}</h2>
+  </div>
+  
+  <div class="content-inner">
+  <tpl:Entries no_content="1">
+    
+    <h2 id="p{{tpl:EntryID}}" class="post-title" lang="{{tpl:EntryLang}}"><a
+    href="{{tpl:EntryURL}}" title="{{tpl:lang Read}} {{tpl:EntryTitle encode_html="1"}}">{{tpl:EntryTitle encode_html="1"}}</a></h2>
+    <div class="date">
+      {{tpl:EntryDate format="%A"}}, {{tpl:EntryDate format="%d"}} {{tpl:EntryDate format="%b"}} {{tpl:EntryDate format="%Y"}}
+		</div>
+    
+  </tpl:Entries>
+  </div>
+  </div>
+</tpl:Block>
+
+<tpl:Block name="wrapper-sidebar">
+	<div id="sidebar" role="complementary">
+  {{tpl:include src="_more-archive-month.html"}}
+		<div id="blognav">
+			{{tpl:Widgets type="nav"}}
+		</div> <!-- End #blognav -->
+
+    <div id="blogextra">
+		  {{tpl:Widgets type="extra"}}
+		</div> <!-- End #blogextra -->
+	</div>
+</tpl:Block>	<!-- wrapper-sidebar -->

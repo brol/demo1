@@ -1,0 +1,103 @@
+{{tpl:extends parent="post.html"}}
+
+<tpl:Block name="head-linkrel">
+	<link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
+	<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+	<tpl:EntryIf pings_active="1"><link rel="pingback" href="{{tpl:BlogXMLRPCURL}}" /></tpl:EntryIf>
+	<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
+</tpl:Block>
+
+<tpl:Block name="body-tag"><body class="dc-page"></tpl:Block>
+
+<tpl:Block name="main-content">
+  <div id="p{{tpl:EntryID}}" class="post" role="article">
+    <div class="date">
+      {{tpl:EntryDate format="%A"}}, {{tpl:EntryDate format="%d"}} {{tpl:EntryDate format="%b"}} {{tpl:EntryDate format="%Y"}}
+		</div>
+    <h2 class="post-title">{{tpl:EntryTitle encode_html="1"}}</h2>
+
+    <!-- # --BEHAVIOR-- publicEntryBeforeContent -->
+    {{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+
+    <tpl:EntryIf extended="1">
+      <div class="post-excerpt">{{tpl:EntryExcerpt}}</div>
+    </tpl:EntryIf>
+    <div class="post-content">{{tpl:EntryContent}}</div>
+
+    <!-- # --BEHAVIOR-- publicEntryAfterContent -->
+    {{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+  </div>
+
+  <!-- # Comments -->
+  <tpl:EntryIf show_comments="1">
+    <tpl:Comments>
+    <tpl:CommentsHeader>
+    <div id="comments">
+      <h3>{{tpl:lang Comments}}</h3>
+      <dl>
+    </tpl:CommentsHeader>
+      <dt id="c{{tpl:CommentID}}" class="{{tpl:CommentIfMe}} {{tpl:CommentIfOdd}} {{tpl:CommentIfFirst}}"><a
+      href="#c{{tpl:CommentID}}" class="comment-number">{{tpl:CommentOrderNumber}}.</a>
+      {{tpl:lang On}} {{tpl:CommentDate}}, {{tpl:CommentTime}}
+      {{tpl:lang by}} {{tpl:CommentAuthorLink}}</dt>
+
+      <dd class="{{tpl:CommentIfMe}} {{tpl:CommentIfOdd}} {{tpl:CommentIfFirst}}">
+      <!-- # --BEHAVIOR-- publicCommentBeforeContent -->
+      {{tpl:SysBehavior behavior="publicCommentBeforeContent"}}
+
+      {{tpl:CommentContent}}
+
+      <!-- # --BEHAVIOR-- publicCommentAfterContent -->
+      {{tpl:SysBehavior behavior="publicCommentAfterContent"}}
+      </dd>
+    <tpl:CommentsFooter>
+      </dl>
+    </div>
+    </tpl:CommentsFooter>
+    </tpl:Comments>
+  </tpl:EntryIf>
+
+  <!-- # Trackbacks -->
+  <tpl:EntryIf show_pings="1">
+    <tpl:Pings>
+      <tpl:PingsHeader>
+    <div id="pings">
+    <h3>{{tpl:lang They posted on the same topic}}</h3>
+      <dl>
+      </tpl:PingsHeader>
+        <dt id="c{{tpl:PingID}}" class="{{tpl:PingIfOdd}} {{tpl:PingIfFirst}}"><a href="#c{{tpl:PingID}}"
+        class="ping-number">{{tpl:PingOrderNumber}}.</a>
+        {{tpl:lang On}} {{tpl:PingDate}}, {{tpl:PingTime}}
+        {{tpl:lang by}} {{tpl:PingBlogName encode_html="1"}}</dt>
+
+        <dd class="{{tpl:PingIfOdd}} {{tpl:PingIfFirst}}">
+        <!-- # --BEHAVIOR-- publicPingBeforeContent -->
+        {{tpl:SysBehavior behavior="publicPingBeforeContent"}}
+
+        <p><a href="{{tpl:PingAuthorURL}}"
+        {{tpl:PingNoFollow}}>{{tpl:PingTitle encode_html="1"}}</a></p>
+        {{tpl:PingContent}}
+
+        <!-- # --BEHAVIOR-- publicPingAfterContent -->
+        {{tpl:SysBehavior behavior="publicPingAfterContent"}}
+        </dd>
+      <tpl:PingsFooter>
+      </dl>
+    </div>
+      </tpl:PingsFooter>
+    </tpl:Pings>
+  </tpl:EntryIf>
+</tpl:Block>
+
+<tpl:Block name="wrapper-sidebar">
+	<div id="sidebar" role="complementary">
+  {{tpl:include src="_more-post.html"}}
+		<div id="blognav">
+			{{tpl:Widgets type="nav"}}
+		</div> <!-- End #blognav -->
+
+    <div id="blogextra">
+		  {{tpl:Widgets type="extra"}}
+		</div> <!-- End #blogextra -->
+	</div>
+</tpl:Block>	<!-- wrapper-sidebar -->

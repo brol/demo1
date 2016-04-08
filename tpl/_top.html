@@ -1,0 +1,28 @@
+<div id="top" role="banner">
+  <div id="header"><h1><span><a href="{{tpl:BlogURL}}">{{tpl:BlogName encode_html="1"}}</a></span></h1>
+  <span class="description">{{tpl:BlogDescription}}</span>
+  
+  <!-- # --BEHAVIOR-- publicTopAfterContent -->
+  {{tpl:SysBehavior behavior="publicTopAfterContent"}}
+
+  {{tpl:SimpleMenu id="supranav" description="title"}}
+  </div>
+</div>
+
+<div id="undertop">
+  <div class="search"><!-- # Search -->
+    <ul id="more">
+      <li><a href="{{tpl:BlogURL}}tags" title="{{tpl:lang Tags}}">{{tpl:lang Tags}}</a></li>
+      <li><a id="feed" title="{{tpl:lang Entries feed}}" href="{{tpl:BlogFeedURL type="atom"}}">Rss</a></li>
+    </ul>
+      <form action="{{tpl:BlogURL}}" method="get">
+          <label for="qu">{{tpl:lang Search}}</label>
+            <input type="text" size="10" maxlength="255" id="qu" name="q" value="" />
+            <input class="submit" type="submit" value="Ok" />
+      </form>
+  </div><!-- # End Search -->
+</div>
+
+<p id="prelude" role="navigation"><a href="#main">{{tpl:lang To content}}</a> |
+<a href="#blognav">{{tpl:lang To menu}}</a> |
+<a href="#search">{{tpl:lang To search}}</a></p>

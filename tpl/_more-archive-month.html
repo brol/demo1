@@ -1,0 +1,12 @@
+<div id="more-infos">
+  <dl class="infos">
+    <dt class="title"><a href="{{tpl:BlogArchiveURL}}">{{tpl:lang Archives}}</a></dt>
+    <dd class="more_infos">{{tpl:ArchiveEntriesCount}} {{tpl:lang Archive(s)}}, {{tpl:ArchiveDate}}</dd>
+    <dd class="more_infos">
+      <tpl:ArchivePrevious><a href="{{tpl:ArchiveURL}}">&#171; {{tpl:ArchiveDate encode_html="1"}}</a></tpl:ArchivePrevious>
+      -
+      <tpl:ArchiveNext><a href="{{tpl:ArchiveURL}}">{{tpl:ArchiveDate encode_html="1"}} &#187;</a></tpl:ArchiveNext>
+    </dd>
+  </dl>
+</div>
+<hr class="separate" />
