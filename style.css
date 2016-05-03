@@ -313,7 +313,7 @@ ul#more li a:hover {
 	width: 970px;
   height: auto !important;
   margin: 0 auto;
-  min-height: 200px;
+  /*min-height: 200px;*/
   overflow: hidden;
   padding: 0 0 10px 20px;
 }

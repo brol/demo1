@@ -15,3 +15,18 @@ msgstr "Archive(s)"
 
 msgid "and"
 msgstr "et"
+
+msgid "Design"
+msgstr "Design"
+
+msgid "Check the markup HTML"
+msgstr "Vérifiez le balisage HTML"
+
+msgid "HTML5 VALID"
+msgstr "HTML5 VALIDE"
+
+msgid "Check the markup CSS"
+msgstr "Vérifiez le balisage CSS"
+
+msgid "CSS VALID"
+msgstr "CSS VALIDE"
