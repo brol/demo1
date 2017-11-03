@@ -1,32 +1,29 @@
+# Language: Français
+# Module: demo1 - 1.6.2
+# Date: 2017-11-02 23:46:14
+# Translated with translater 2017.05.10
+
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: demo1 1.6.2\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: brol <contact@brol.info>\n"
+"PO-Revision-Date: 2017-11-02T23:46:14+00:00\n"
+"Last-Translator: brol\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "Archive(s)"
-msgstr "Archive(s)"
-
-msgid "and"
-msgstr "et"
-
+#: tpl/_footer.html:7
 msgid "Design"
 msgstr "Design"
 
-msgid "Check the markup HTML"
-msgstr "Vérifiez le balisage HTML"
+#: tpl/_footer.html:7
+msgid "and"
+msgstr "et"
 
-msgid "HTML5 VALID"
-msgstr "HTML5 VALIDE"
+#: tpl/_more-archive-month.html:4
+msgid "Archive(s)"
+msgstr "Archive(s)"
 
-msgid "Check the markup CSS"
-msgstr "Vérifiez le balisage CSS"
-
-msgid "CSS VALID"
-msgstr "CSS VALIDE"

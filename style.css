@@ -183,7 +183,7 @@ cite { }
 #supranav .active a:hover {
 	color: #fff;
 }
-#supranav li a span { display: none; }
+/*#supranav li a span { display: none; }*/
 
 #supranav li.active {
 	margin: 0 1em 0 0;

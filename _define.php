@@ -12,7 +12,7 @@ $this->registerModule(
 	/* Name */			   "Demo#1",
 	/* Description*/	 "Un thème avec des onglets et 3 volets de widgets",
 	/* Author */		   "Azork, Pierre Van Glabeke",
-	/* Version */		   "1.6.1",
+	/* Version */		   "1.6.2",
 	array(
 		'type'		=>		'theme',
 		'tplset' => 'mustek',
