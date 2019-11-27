@@ -119,12 +119,12 @@ cite { }
   margin:0;
 }
 .description {
-	width: 550px;
+	width: 700px;
 	color: #CCD13C;
   margin: 0;
   font-size: 11px;
   font-weight:bold;
-  line-height:1.875em;
+  line-height:1.3em;
 }
 #prelude {
 	position: absolute;

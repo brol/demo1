@@ -12,10 +12,10 @@ $this->registerModule(
 	/* Name */			   "Demo#1",
 	/* Description*/	 "Un thème avec des onglets et 3 volets de widgets",
 	/* Author */		   "Azork, Pierre Van Glabeke",
-	/* Version */		   "1.6.2",
+	/* Version */		   "1.7",
 	array(
 		'type'		=>		'theme',
 		'tplset' => 'mustek',
-		'dc_min' => '2.9'
+		'dc_min' => '2.15'
 	)
 );

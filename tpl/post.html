@@ -25,11 +25,11 @@
 
 <tpl:Block name="html-head">
 	{{tpl:parent}}
-
-	<script type="text/javascript" src="{{tpl:BlogQmarkURL}}pf=post.js"></script>
-	<script type="text/javascript">
-		var post_remember_str = '{{tpl:lang Remember me on this blog}}';
-	</script>
+  <script type="application/json" id="dc_post_remember_str-data">
+    {"post_remember_str": "{{tpl:lang Remember me on this blog}}"}
+  </script>
+  <script type="text/javascript" src="{{tpl:BlogQmarkURL}}pf=util.js"></script>
+  <script type="text/javascript" src="{{tpl:BlogQmarkURL}}pf=post.js"></script>
 </tpl:Block>
 
 <tpl:Block name="body-tag"><body class="dc-post"></tpl:Block>
@@ -41,9 +41,6 @@
 
 <tpl:Block name="main-content">
   <div id="p{{tpl:EntryID}}" class="post" role="article">
-    <div class="date">
-      {{tpl:EntryDate format="%A"}}, {{tpl:EntryDate format="%d"}} {{tpl:EntryDate format="%b"}} {{tpl:EntryDate format="%Y"}}
-		</div>
 		
     <h2 class="post-title">{{tpl:EntryTitle encode_html="1"}}</h2>
     
