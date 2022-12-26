@@ -8,4 +8,4 @@
 # ***** END LICENSE BLOCK *****
 if (!defined('DC_RC_PATH')) { return; }
 
-l10n::set(dirname(__FILE__).'/locales/'.$_lang.'/public');
+l10n::set(dirname(__FILE__) . '/locales/' . dcCore::app()->lang. '/public');

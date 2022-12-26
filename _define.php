@@ -6,16 +6,17 @@
 #   License : public domain
 #
 # ***** END LICENSE BLOCK *****
-if (!defined('DC_RC_PATH')) { return; }
-
+if (!defined('DC_RC_PATH')) {
+    return;
+}
 $this->registerModule(
-	/* Name */			   "Demo#1",
-	/* Description*/	 "Un thème avec des onglets et 3 volets de widgets",
-	/* Author */		   "Azork, Pierre Van Glabeke",
-	/* Version */		   "1.7",
-	array(
-		'type'		=>		'theme',
-		'tplset' => 'mustek',
-		'dc_min' => '2.15'
-	)
+    'Demo#1',
+    'Un thème avec des onglets et 3 volets de widgets',
+    'Azork, Pierre Van Glabeke',
+    '1.8',
+    [
+        'requires' => [['core', '2.24']],
+        'type'     => 'theme',
+        'tplset'   => 'mustek',
+    ]
 );

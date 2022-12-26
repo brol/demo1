@@ -1,14 +1,15 @@
 # Language: Français
-# Module: demo1 - 1.6.2
-# Date: 2017-11-02 23:46:14
-# Translated with translater 2017.05.10
+# Module: demo1 - 1.8
+# Date: 2022-12-26 15:43:16
+# Author: Pierre Van Glabeke
+# Translated with translater 2022.12.22
 
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
-"Project-Id-Version: demo1 1.6.2\n"
+"Project-Id-Version: demo1 1.8\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2017-11-02T23:46:14+00:00\n"
+"PO-Revision-Date: 2022-12-26T15:43:16+00:00\n"
 "Last-Translator: brol\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"

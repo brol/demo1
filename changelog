@@ -1,3 +1,7 @@
+v1.8 - 26/12/2022 - Pierre Van Glabeke
+* modifs html
+* dc2.24 requis
+
 v1.7 - 27/11/2019 - Pierre Van Glabeke
 * modifs html et css
 * dc2.15 requis
@@ -6,7 +10,7 @@ v1.6.3 - 12/06/2018 - Pierre Van Glabeke
 * suppression date dans page et post
 
 v1.6.2 - 02/11/2017 - Pierre Van Glabeke
-* correction connerie de renommage de simpleMenu ! ou l'art de faire chier le monde sans communiquer
+* renommage de simpleMenu
 * modif footer (suppression liens validateurs)
 
 v1.6.1 - 03/05/2016 - Pierre Van Glabeke
