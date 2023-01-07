@@ -1,0 +1,110 @@
+<div id="more-infos">
+  <dl class="infos">
+    <dt class="title">{{tpl:EntryTitle encode_html="1"}}</dt>
+    <dd class="date">{{tpl:EntryDate format="%A"}}, {{tpl:EntryDate format="%d"}} {{tpl:EntryDate format="%b"}} {{tpl:EntryDate format="%Y"}} {{tpl:EntryTime}} {{tpl:lang By}} {{tpl:EntryAuthorLink}}</dd>
+    <dd class="more_infos">{{tpl:EntryCommentCount}}</dd>
+	</dl>
+
+  <tpl:EntryIf operator="or" comments_active="1" pings_active="1">
+		<ul id="feed_rss">
+			<li><a class="feed" href="{{tpl:BlogFeedURL type="atom"}}/comments/{{tpl:EntryID}}"
+      title="{{tpl:lang This post's comments Atom feed}}">{{tpl:lang This post's comments feed}}</a></li>
+      <tpl:EntryIf pings_active="1">
+      <li>{{tpl:lang Trackback URL}}&nbsp;:<br />{{tpl:EntryPingLink}}</li>
+      </tpl:EntryIf>
+    </ul>
+  </tpl:EntryIf>
+    
+  <!-- # Attachments -->
+	<tpl:Attachments>
+		<tpl:AttachmentsHeader>
+			<div id="attachments">
+				<h3>{{tpl:lang Attachments}}</h3>
+				<ul>
+		</tpl:AttachmentsHeader>
+					<li class="{{tpl:AttachmentType}}">
+				<tpl:AttachmentIf is_audio="1">
+					{{tpl:include src="_audio_player.html"}}
+				</tpl:AttachmentIf>
+				<tpl:AttachmentIf is_video="1">
+				  {{tpl:include src="_video_player.html"}}
+				</tpl:AttachmentIf>
+				<tpl:AttachmentIf is_audio="0" is_video="0">
+					<a href="{{tpl:AttachmentURL}}" title="{{tpl:AttachmentFileName}} ({{tpl:AttachmentSize}})">{{tpl:AttachmentTitle}}</a>
+				</tpl:AttachmentIf>
+					</li>
+		<tpl:AttachmentsFooter>
+				</ul>
+			</div>
+		</tpl:AttachmentsFooter>
+	</tpl:Attachments>
+
+  <tpl:EntryIf comments_active="1">
+    <tpl:SysIfFormError>
+      <div class="error" id="pr">{{tpl:SysFormError}}</div>
+    </tpl:SysIfFormError>
+
+    <tpl:SysIfCommentPublished>
+      <div class="message" id="pr">{{tpl:lang Your comment has been published.}}</div>
+    </tpl:SysIfCommentPublished>
+
+    <tpl:SysIfCommentPending>
+      <div class="message" id="pr">{{tpl:lang Your comment has been submitted and will be reviewed for publication.}}</div>
+    </tpl:SysIfCommentPending>
+
+<dl id="comment">
+  <dt class="title">{{tpl:lang Add a comment}}</dt>
+    <dd class="form">
+    <!-- # Comment form -->
+    <form action="{{tpl:EntryURL}}#pr" method="post" id="comment-form" role="form">
+      <tpl:IfCommentPreview>
+          <dl id="pr">
+          <dt class="title">{{tpl:lang Your comment}}</dt>
+            <dd class="comment-preview">{{tpl:CommentPreviewContent}}</dd>
+            <dd><p class="buttons"><input type="submit" class="submit" value="{{tpl:lang send}}" /></p></dd>
+          </dl>
+      </tpl:IfCommentPreview>
+
+      <fieldset>
+        <!-- # --BEHAVIOR-- publicCommentFormBeforeContent -->
+        {{tpl:SysBehavior behavior="publicCommentFormBeforeContent"}}
+
+        <p class="field"><label for="c_name">{{tpl:lang Name or nickname}}&nbsp;:</label>
+        <input name="c_name" id="c_name" type="text" size="30" maxlength="255"
+        value="{{tpl:CommentPreviewName encode_html="1"}}" />
+        </p>
+
+        <p class="field"><label for="c_mail">{{tpl:lang Email address}}&nbsp;:</label>
+        <input name="c_mail" id="c_mail" type="text" size="30" maxlength="255"
+        value="{{tpl:CommentPreviewEmail encode_html="1"}}" />
+        </p>
+
+        <p class="field"><label for="c_site">{{tpl:lang Website}}&nbsp;:</label>
+        <input name="c_site" id="c_site" type="text" size="30" maxlength="255"
+        value="{{tpl:CommentPreviewSite encode_html="1"}}" />
+        </p>
+
+        <p style="display:none"><input name="f_mail" type="text" size="30"
+        maxlength="255" value="" /></p>
+
+        <p class="field"><label for="c_content">{{tpl:lang Comment}}&nbsp;:</label>
+        <textarea name="c_content" id="c_content" cols="35"
+        rows="7">{{tpl:CommentPreviewContent raw="1" encode_html="1"}}</textarea>
+        </p>
+        <p class="form-help">{{tpl:CommentHelp}}</p>
+
+        <!-- # --BEHAVIOR-- publicCommentFormAfterContent -->
+        {{tpl:SysBehavior behavior="publicCommentFormAfterContent"}}
+      </fieldset>
+
+      <fieldset>
+        <p class="buttons"><input type="submit" class="preview" name="preview" value="{{tpl:lang preview}}" />
+        <tpl:IfCommentPreviewOptional><input type="submit" class="submit" value="{{tpl:lang send}}" /></tpl:IfCommentPreviewOptional></p>
+      </fieldset>
+      
+    </form>
+    </dd>
+</dl>
+  </tpl:EntryIf>
+</div>
+<hr class="separate" />
