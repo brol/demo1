@@ -1,3 +1,7 @@
+v1.8.1 - 10/03/2023 - Pierre Van Glabeke
+* modifs html/css
+* dc2.26 requis
+
 v1.8 - 07/01/2023 - Pierre Van Glabeke
 * modifs html
 * dc2.24 requis

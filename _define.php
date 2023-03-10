@@ -17,9 +17,9 @@ $this->registerModule(
     'Demo#1',
     'Un thème avec des onglets et 3 volets de widgets',
     'Azork, Pierre Van Glabeke',
-    '1.8',
+    '1.8.1',
     [
-        'requires' => [['core', '2.24']],
+        'requires' => [['core', '2.26']],
         'type'     => 'theme',
         'tplset'   => 'mustek',
     ]
